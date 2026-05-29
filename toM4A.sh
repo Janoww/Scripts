@@ -8,7 +8,7 @@ for file in *.mp4; do
     base="${file%.mp4}"
 
     # Convert to mp3
-    ffmpeg -i "$file" -q:a 0 -map a "${base}.mp3"
+    ffmpeg -i "$file" -map a -c:a copy "${base}.m4a"
 done
 
 echo "Conversion complete."
